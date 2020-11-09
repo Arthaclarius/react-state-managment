@@ -1,24 +1,20 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { SideBar as SideBarLayout } from "~components/SideBar";
-import { IUser } from "~types";
 import Chats from "~containers/Chats";
 import React from "react";
+import { AppContext } from "~pages/App/App";
 
-interface ISideBarProps {
-  user?: IUser;
-  selectedChat?: string;
-  onSelectedChat?: (id: string) => any;
-}
+const SideBar = () => {
+  const { user, currentChat, onSelectChat } = useContext(AppContext);
 
-const SideBar: FC<ISideBarProps> = ({ user, selectedChat, onSelectedChat }) => {
   return (
     <SideBarLayout>
       {user && user.chats ? (
         <Chats
           userId={user.id}
           chats={user.chats}
-          selectedChat={selectedChat}
-          onSelectedChat={onSelectedChat}
+          selectedChat={currentChat?.id}
+          onSelectChat={onSelectChat}
         ></Chats>
       ) : (
         "Loading..."

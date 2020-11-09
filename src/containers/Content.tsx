@@ -1,17 +1,13 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { Content as ContentLayout } from "~components/Content";
-import { IChat, IUser } from "~types";
 import Chat from "~containers/Chat";
 import InputChat from "~containers/InputChat";
 import React from "react";
+import { AppContext } from "~pages/App/App";
 
-interface IContentProps {
-  currentChat?: IChat;
-  user?: IUser;
-  onSend?: (message: string) => any;
-}
+const Content = () => {
+  const { user, currentChat, onSendMessage } = useContext(AppContext);
 
-const Content: FC<IContentProps> = ({ user, currentChat, onSend }) => {
   return (
     <ContentLayout>
       {currentChat?.messages ? (
@@ -24,7 +20,7 @@ const Content: FC<IContentProps> = ({ user, currentChat, onSend }) => {
           friendName={
             currentChat.users.find((x) => x.id !== user?.id)?.nickname
           }
-          onSend={onSend}
+          onSend={onSendMessage}
         ></InputChat>
       )}
     </ContentLayout>

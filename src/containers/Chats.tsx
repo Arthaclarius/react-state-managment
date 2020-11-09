@@ -6,19 +6,19 @@ interface IChatsProps {
   userId: string;
   chats: IChat[];
   selectedChat?: string;
-  onSelectedChat?: (id: string) => any;
+  onSelectChat?: (id: string) => any;
 }
 const Chats: FC<IChatsProps> = ({
   userId,
   chats,
   selectedChat,
-  onSelectedChat,
+  onSelectChat,
 }) => {
   const onClickHandler = useCallback(
     (id: string) => () => {
-      onSelectedChat?.(id);
+      onSelectChat?.(id);
     },
-    [onSelectedChat]
+    [onSelectChat]
   );
 
   return (
