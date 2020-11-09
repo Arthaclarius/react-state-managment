@@ -1,0 +1,42 @@
+{
+  "name": "react-state-managment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthaclarius/react-state-managment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arthaclarius/react-state-managment/issues"
+  },
+  "homepage": "https://github.com/Arthaclarius/react-state-managment#readme",
+  "dependencies": {
+    "@types/faker": "^5.1.4",
+    "@types/ramda": "^0.27.32",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "@types/styled-components": "^5.1.4",
+    "faker": "^5.1.0",
+    "parcel-bundler": "^1.12.4",
+    "ramda": "^0.27.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-perf-devtool": "^3.1.8",
+    "styled-components": "^5.2.1",
+    "typescript": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-react": "^7.12.5",
+    "babel-plugin-styled-components": "^1.11.1",
+    "react-rpm": "^1.0.1",
+    "sass": "^1.28.0"
+  }
+}
